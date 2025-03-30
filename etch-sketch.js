@@ -1,9 +1,21 @@
 
+
+function getRandomColor() {
+// Generate a random hexadecimal color
+ const letters = '0123456789ABCDEF';
+ let color = '#'
+ for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+ }
+ return color;
+}
+
 function createDivs(num) {
     //clear the container before creating a new grid
     let container = document.getElementById("container");
     container.innerHTML = "";
 
+    //Set sizing of container and percent used in box size below
     let size = 100 / num;
 
     let containerWidth = window.innerWidth * 0.9;
@@ -19,6 +31,17 @@ function createDivs(num) {
         myDivs.style.width = `${size}%`;   // Set each box's width as a percentage of container width
         myDivs.style.height = `${size}%`;  // Set each box's height as a percentage of container height
         myDivs.textContent = `${i + 1}`;
+
+        //add hover effect dynamically in js and get background color from random color function
+
+        myDivs.addEventListener("mouseover", function() {
+            myDivs.style.backgroundColor = getRandomColor();
+        });
+
+        myDivs.addEventListener("mouseout", function() {
+            myDivs.style.backgroundColor = ""
+        });
+
         document.getElementById("container").appendChild(myDivs);
     }
 };

@@ -12,7 +12,3 @@
 .myDivs{
     border: 1px solid black;
 }
-
-.myDivs:hover {
-    background-color: red;
-}
