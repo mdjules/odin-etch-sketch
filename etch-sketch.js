@@ -30,7 +30,7 @@ function createDivs(num) {
         myDivs.classList.add('myDivs');
         myDivs.style.width = `${size}%`;   // Set each box's width as a percentage of container width
         myDivs.style.height = `${size}%`;  // Set each box's height as a percentage of container height
-        myDivs.textContent = `${i + 1}`;
+    
 
         //add hover effect dynamically in js and get background color from random color function
 
